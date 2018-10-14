@@ -1,0 +1,12 @@
+{
+  "name": "the-imp",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "huangStoamch <nxmbest@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mkdirp": "^0.5.1",
+    "winston": "^3.1.0"
+  }
+}
