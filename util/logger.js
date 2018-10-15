@@ -8,7 +8,7 @@ mkdirp.sync(log_dir);
 
 module.exports = {
   loggers: {},
-  type() {
+  get(type) {
     if (Reflect.has(this.loggers, type)) return Reflect.get(this.loggers, type);
 
     let log_file = `${log_dir}/${type}.log`;
