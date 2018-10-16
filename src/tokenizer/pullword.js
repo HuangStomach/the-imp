@@ -9,11 +9,13 @@ class PullWord {
   }
   get(word = '') {
     return this.client.get('/get.php', {
-      source: word,
-      param1: 0,
-      param2: 0
+      params: {
+        source: word,
+        param1: 0,
+        param2: 0
+      }
     }).then(result => {
-      let words = result.data.split(' ');
+      let words = result.data.split('\r\n').filter(i => i);
       return Promise.resolve(words);
     }, err => Promise.reject(err.message))
   }

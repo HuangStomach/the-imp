@@ -2,9 +2,8 @@ const config = require('../util/config')('tokenizer');
 const logger = require('../util/logger').get('tokenizer');
 
 class Tokenizer {
-  handles = [];
-
   constructor(handles = []) {
+    this.handles = [];
     for (let handle of handles) {
       if (!Reflect.has(config.tokenizers, handle)
       || Reflect.get(config.tokenizers, handle) == false) {
@@ -12,7 +11,7 @@ class Tokenizer {
         continue;
       }
       
-      let tokenizer = Reflect.construct(require(`./tokenizer/${handle}`));
+      let tokenizer = Reflect.construct(require(`./tokenizer/${handle}`), []);
       this.handles.push(tokenizer);
     }
   }
@@ -24,8 +23,7 @@ class Tokenizer {
       queue.push(tokenizer.get(word));
     }
 
-    Promise.all(queue)
-    .then();
+    return Promise.all(queue);
   }
 }
 
