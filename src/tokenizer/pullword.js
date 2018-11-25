@@ -17,7 +17,10 @@ class PullWord {
     }).then(result => {
       let words = result.data.split('\r\n').filter(i => i);
       return Promise.resolve(words);
-    }, err => Promise.reject(err.message))
+    }, err => {
+      logger.warn(`pullword服务出现错误: ${err.message}`);
+      return Promise.resolve([])
+    })
   }
 }
 

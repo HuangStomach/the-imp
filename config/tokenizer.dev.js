@@ -1,7 +1,7 @@
 module.exports = {
   tokenizers: {
     pullword: true,
-    sea: false,
+    sae: false,
     jieba: true,
   }
 };
