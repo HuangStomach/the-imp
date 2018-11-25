@@ -2,10 +2,11 @@ const nodejieba = require('nodejieba');
 
 class Jieba {
   constructor() {
-    
+    nodejieba.load({
+      userDict: `${__dirname}/../../dict/jieba/user.utf8`,
+    });
   }
   get(word = '') {
-    console.log(word);
     let result = nodejieba.cut(word);
     return Promise.resolve(result);
   }
