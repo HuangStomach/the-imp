@@ -17,6 +17,6 @@ module.exports = {
       res.send(words).end();
     })
 
-    app.listen(4000, () => { logger.info(`接口服务开启 监听端口: 80`) })
+    app.listen(80, () => { logger.info(`接口服务开启 监听端口: 80`) })
   }
 }
