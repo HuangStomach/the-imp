@@ -20,3 +20,27 @@ docker run \
     --privileged \
     huangstomach/the-imp:latest
 ```
+
+### 使用方法实例
+
+```
+GET http://localhost/segment?word=我有一只小柯基
+```
+
+``` javascript
+[
+    [
+        "我有",
+        "一只",
+        "小柯",
+        "柯基"
+    ],
+    [
+        "我",
+        "有",
+        "一只",
+        "小",
+        "柯基"
+    ]
+]
+```
