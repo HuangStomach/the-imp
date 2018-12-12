@@ -7,3 +7,16 @@
 
 * [nodejieba](https://github.com/yanyiwu/nodejieba)
 * [pullword](http://pullword.com/)
+
+
+``` bash
+docker run \
+    --name=the-imp \
+    -d \
+    -v ~/the-imp/config:/usr/src/app/config \
+    -v ~/the-imp/dict:/usr/src/app/dict \
+    -p 80:80/tcp \
+    --restart=always \
+    --privileged \
+    huangstomach/the-imp:latest
+```
