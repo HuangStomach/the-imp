@@ -5,7 +5,7 @@
   "author": "huangStoamch <nxmbest@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "express": "^4.16.4",
     "mkdirp": "^0.5.1",
     "nodejieba": "^2.3.0",
